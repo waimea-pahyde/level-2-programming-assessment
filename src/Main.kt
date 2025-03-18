@@ -16,5 +16,12 @@
 
 fun main() {
     println("Hello World!")
+    // Create a grid for the coins to play on (and show it) (20 squares)
+    //Grab the silver coins (5)
+    //grab the gold coin (1)
+    //Place the coins on the grid (at random spots)
+    // show the grid with the coins
+    //
+
 }
 
