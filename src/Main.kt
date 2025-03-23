@@ -54,6 +54,8 @@
  */
 const val NUMSQUARES = 20 //20 SQUARES
 const val EMPTY = "   "
+const val SILVERCOINS = 5
+const val GOLDCOINS = 1
 
 
 fun main() { //Main Game
@@ -66,13 +68,14 @@ fun main() { //Main Game
     println("How to play:")
     println("dump the instructions here CHANGE THIS LATER")
 
-    val board = setupBoard()
+    var board = setupBoard()
     showBoard(board)
 
     println()
     println("Creating the board...")
 
-    setupBoard()
+    val withCoin = addCoins(board)
+    showBoard(withCoin)
 
 
 }
@@ -112,6 +115,34 @@ fun showBoard(squareList: MutableList<String>) {
 
 
 }}
+
+fun addCoins(squareList: MutableList<String>): MutableList<String> {
+    println("I'm using add coins")
+    for (i in 0..SILVERCOINS) {
+
+        println("I'm in the for loop")
+        // get a random item
+        //get the index of that item
+        //replace it with a silver coin
+        var coinPlace = squareList.indexOf(squareList.random(System.currentTimeMillis()))
+        println("Yep I got the index of $coinPlace")
+
+
+        println("I assigned a value to coin place, which is $coinPlace")
+
+
+
+        squareList[coinPlace.toInt()] = "SILVERCOIN"
+
+        println("I added silver coins")
+    }
+    return squareList
+
+//Grab the silver coins (5)
+//grab the gold coin (1)
+//Place the coins on the grid (at random spots)
+// show the grid with the coins
+}
 
 
 
