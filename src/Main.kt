@@ -1,3 +1,6 @@
+import java.lang.System.currentTimeMillis
+import kotlin.random.Random
+
 /**
  * =====================================================================
  * Programming Project for NCEA Level 2, Standard 91896
@@ -77,6 +80,26 @@ fun main() { //Main Game
     val withCoin = addCoins(board)
     showBoard(withCoin)
 
+    /**
+     * THE GAME LOOP
+     *  - ASK PLAYER 1 TO TAKE A TURN
+     *  - IF THERES A COIN IN THE LAST SPACE, REMOVE SHOULD BE AN OPTION
+     *  - IF THERES NOT, ASK THEM TO PICK A COIN
+     *  - ASK WHAT THEY WANT TO DO WITH THE COIN
+     *  SWITCH TO PLAYER 2
+     *  ====================
+     *  PRINTLN()
+     * IF SQUARELIST [1] != EMPTY
+     * usercoin = readln(), swap monkeys
+     * user move square
+     * remove coin from previous sqare (removeAt)
+     * add to new square (addAt)
+     * if square != EMPTY println continue
+     *
+     */
+
+    
+
 
 }
 
@@ -95,6 +118,7 @@ fun setupBoard(): MutableList<String> { //not done, needs return function
     return squareList
 
 }
+
 //Drawing the board - Create a grid for the coins to play on (and show it) (20 squares)
 fun showBoard(squareList: MutableList<String>) {
     println()
@@ -104,7 +128,7 @@ fun showBoard(squareList: MutableList<String>) {
     print("┬")
 
     println()
-    for ((i, squareNum ) in squareList.withIndex()) {
+    for ((i, squareNum) in squareList.withIndex()) {
         print("| ${squareNum.padEnd( 7 , ' ')}")
 
     }
@@ -116,33 +140,46 @@ fun showBoard(squareList: MutableList<String>) {
 
 }}
 
-fun addCoins(squareList: MutableList<String>): MutableList<String> {
-    println("I'm using add coins")
-    for (i in 0..SILVERCOINS) {
+//Adds the coins to the board
+fun addCoins(squareList: MutableList<String>): MutableList<String> { //This function adds coins onto the board
+    //println("I'm using add coins") Testing to check if it was using the function
 
-        println("I'm in the for loop")
-        // get a random item
-        //get the index of that item
-        //replace it with a silver coin
-        var coinPlace = squareList.indexOf(squareList.random(System.currentTimeMillis()))
-        println("Yep I got the index of $coinPlace")
+    for (i in 0..SILVERCOINS) { //for each coin on the board
 
+        //println("I'm in the for loop") Testing
 
-        println("I assigned a value to coin place, which is $coinPlace")
+        //Get the number of sqauares
+        //pick a random number from 1-number of squaes
+        var coinPlace = Random.nextInt(1, NUMSQUARES)
 
+        //println("I assigned a value to coin place, which is $coinPlace")
 
+        //Check if the square is empty, and if it is place a silver coin there
+        if (squareList[coinPlace] == EMPTY) {
+            squareList[coinPlace.toInt()] = "SILV"
+            //println("I placed a coin at $coinPlace")
+        } else continue
 
-        squareList[coinPlace.toInt()] = "SILVERCOIN"
-
-        println("I added silver coins")
+        //println("I added silver coins")
     }
-    return squareList
+    var coinPlaceGold = Random.nextInt(1, NUMSQUARES)
+    if (squareList[coinPlaceGold] == EMPTY) {
+        squareList[coinPlaceGold] = "GOLD"
+    }
+    else {
+        var coinPlaceGold = Random.nextInt(1, NUMSQUARES)
+        squareList[coinPlaceGold] = "GOLD"
+    }
 
-//Grab the silver coins (5)
+    return squareList
+}
+
+
+
 //grab the gold coin (1)
 //Place the coins on the grid (at random spots)
 // show the grid with the coins
-}
+
 
 
 
