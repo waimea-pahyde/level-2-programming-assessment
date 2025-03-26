@@ -59,6 +59,8 @@ const val NUMSQUARES = 20 //20 SQUARES
 const val EMPTY = "   "
 const val SILVERCOINS = 5
 const val GOLDCOINS = 1
+var playerTurnCount = 1
+
 
 
 fun main() { //Main Game
@@ -98,7 +100,23 @@ fun main() { //Main Game
      *
      */
 
-    
+    while (true) {
+        playerTurn()
+
+        if (board[0] != EMPTY ) {
+            println("Would you like to remove a coin or move a coin?")
+            println("[R] to remove a coin")
+            println("[M] to move a coin")
+            val playerMove = readln()
+            when (playerMove) {
+                'R'.toString() -> board.removeAt(0)
+                'M'.toString() -> playerMove()
+            }
+        }
+        break
+    }
+
+
 
 
 }
@@ -179,6 +197,17 @@ fun addCoins(squareList: MutableList<String>): MutableList<String> { //This func
 //grab the gold coin (1)
 //Place the coins on the grid (at random spots)
 // show the grid with the coins
+
+fun playerTurn() {
+    playerTurnCount++
+    if (playerTurnCount % 2 == 0) {
+        println()
+        println("Player 1's turn!")
+    }
+    else println("Player 2's turn!")
+
+
+}
 
 
 
