@@ -100,27 +100,33 @@ fun main() { //Main Game
      *
      */
 
-    while (true) {
-        playerTurn()
 
-        if (board[0] != EMPTY ) {
+        playerTurn()
+        board[0] = "silver"
+        if (board[0] != EMPTY) {
             println("Would you like to remove a coin or move a coin?")
             println("[R] to remove a coin")
             println("[M] to move a coin")
             val playerMove = readln()
             when (playerMove) {
-                'R'.toString() -> board.removeAt(0)
-                'M'.toString() -> playerMove()
+                null -> println("PLease insert either M or R")
+                'M'.toString() -> coinMove(board)
+                //'R'.toString() -> coinRemove()
+
             }
+
+
+//            else {
+//                coinMove()
+//            }
+//
+//            break
         }
-        break
-    }
-
-
-
+        else {
+            println("yep it's empty")
+        }
 
 }
-
 //setup game :
 
 //Grab the silver coins (5)
@@ -203,12 +209,57 @@ fun playerTurn() {
     if (playerTurnCount % 2 == 0) {
         println()
         println("Player 1's turn!")
+        return
     }
     else println("Player 2's turn!")
+    return
 
 
 }
 
+fun coinMove(board: MutableList<String>) { //The function to move coins
+    /**
+     * - ask the user what coin they want to move
+     * - get the number
+     * - get the index of that number and check if it's not empty
+     * - if it is empty, tell tehm there isn't a coin there
+     * - ask them where they want to move the coin.
+     * - check if it's empty
+     * for squares in square jump, if square != empty, call 'thats not empty'
+     * if no squares are not empty move the coin there
+     *
+     */
+    println("Which coin would you like to move?")
+
+
+    while (true) {
+        val movedCoin = readln().toInt()
+        if (movedCoin <= 0 || movedCoin >= NUMSQUARES) { //If they pick a square thats too big or small.
+        println("Please pick a coin to move!")
+        }
+        if (board[movedCoin - 1] == EMPTY) {
+         println("There isn't a coin there!")
+            continue}
+        break}
+
+    while (true) {
+        println("Where would you like to move your coin to?")
+        val moveSquare = readln().toInt()
+        if (board[moveSquare] != EMPTY) {
+            println("There is already a coin in this square!!")
+            continue
+        }
+
+        
+    }
+
+
+
+    }
+
+
+
+}
 
 
 
