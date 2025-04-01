@@ -237,6 +237,7 @@ fun coinMove(board: MutableList<String>) { //The function to move coins
         if (movedCoin <= 0 || movedCoin >= NUMSQUARES) { //If they pick a square thats too big or small.
         println("Please pick a coin to move!")
         }
+
         if (board[movedCoin - 1] == EMPTY) {
          println("There isn't a coin there!")
             continue}
@@ -249,6 +250,7 @@ fun coinMove(board: MutableList<String>) { //The function to move coins
             println("There is already a coin in this square!!")
             continue
         }
+
 
         
     }

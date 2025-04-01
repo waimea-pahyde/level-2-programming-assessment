@@ -14,7 +14,7 @@ The development log captures key moments in your application development:
 
 Example description and notes. Example description and notes. Example description and notes. Example description and notes. Example description and notes. Example description and notes.
 
-![example.png](screenshots/example.png)
+![example.png](screenshots/example.png) 
 
 ---
 
