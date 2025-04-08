@@ -57,22 +57,37 @@ import kotlin.random.Random
 const val NUMSQUARES = 20 //20 SQUARES
 const val EMPTY = "   "
 const val SILVERCOINS = 5
-const val GOLDCOINS = 1
+
 var playerTurnCount = 1
 
 
+//Main Game Loop
+fun main() {
 
-fun main() { //Main Game
-
-    //WELCOME / SHOW INSTUCTIONS
-    println("WELCOME TO OLD GOLD!!")
-    println("=====================")
+    println(" \$\$\$\$\$\$\\ \$\$\\      \$\$\$\$\$\$\$\\         \$\$\$\$\$\$\\  \$\$\$\$\$\$\\ \$\$\\      \$\$\$\$\$\$\$\\  \n" +
+            "\$\$  __\$\$\\\$\$ |     \$\$  __\$\$\\       \$\$  __\$\$\\\$\$  __\$\$\\\$\$ |     \$\$  __\$\$\\ \n" +
+            "\$\$ /  \$\$ \$\$ |     \$\$ |  \$\$ |      \$\$ /  \\__\$\$ /  \$\$ \$\$ |     \$\$ |  \$\$ |\n" +
+            "\$\$ |  \$\$ \$\$ |     \$\$ |  \$\$ |      \$\$ |\$\$\$\$\\\$\$ |  \$\$ \$\$ |     \$\$ |  \$\$ |\n" +
+            "\$\$ |  \$\$ \$\$ |     \$\$ |  \$\$ |      \$\$ |\\_\$\$ \$\$ |  \$\$ \$\$ |     \$\$ |  \$\$ |\n" +
+            "\$\$ |  \$\$ \$\$ |     \$\$ |  \$\$ |      \$\$ |  \$\$ \$\$ |  \$\$ \$\$ |     \$\$ |  \$\$ |\n" +
+            " \$\$\$\$\$\$  \$\$\$\$\$\$\$\$\\\$\$\$\$\$\$\$  |      \\\$\$\$\$\$\$  |\$\$\$\$\$\$  \$\$\$\$\$\$\$\$\\\$\$\$\$\$\$\$  |\n" +
+            " \\______/\\________\\_______/        \\______/ \\______/\\________\\_______/ \n" +
+            "                                                                     ")
+    println("  ‧₊ ˚  ⊹ ࣭ ⭑ . ₊ ⊹ .₊๋  ‧₊ ˚  ⊹ ࣭ ⭑ . ₊ ⊹ .₊๋")
     println()
 
-    println("How to play:")
-    println("dump the instructions here CHANGE THIS LATER")
+    println("\uD835\uDE43\uD835\uDE64\uD835\uDE6C \uD835\uDE4F\uD835\uDE64 \uD835\uDE4B\uD835\uDE61\uD835\uDE56\uD835\uDE6E:")
+    println("\uD835\uDE4B\uD835\uDE61\uD835\uDE56\uD835\uDE6E\uD835\uDE5A\uD835\uDE67\uD835\uDE68 \uD835\uDE64\uD835\uDE63\uD835\uDE5A \uD835\uDE56\uD835\uDE63\uD835\uDE59 \uD835\uDE69\uD835\uDE6C\uD835\uDE64 \uD835\uDE69\uD835\uDE56\uD835\uDE60\uD835\uDE5A \uD835\uDE69\uD835\uDE6A\uD835\uDE67\uD835\uDE63\uD835\uDE68 \uD835\uDE69\uD835\uDE64 \uD835\uDE5A\uD835\uDE5E\uD835\uDE69\uD835\uDE5D\uD835\uDE5A\uD835\uDE67 \uD835\uDE62\uD835\uDE64\uD835\uDE6B\uD835\uDE5A \uD835\uDE64\uD835\uDE67 \uD835\uDE67\uD835\uDE5A\uD835\uDE62\uD835\uDE64\uD835\uDE6B\uD835\uDE5A \uD835\uDE58\uD835\uDE64\uD835\uDE5E\uD835\uDE63\uD835\uDE68 \uD835\uDE5B\uD835\uDE67\uD835\uDE64\uD835\uDE62 \uD835\uDE69\uD835\uDE5D\uD835\uDE5A \uD835\uDE57\uD835\uDE64\uD835\uDE56\uD835\uDE67\uD835\uDE59! \uD835\uDE4F\uD835\uDE5D\uD835\uDE5A \uD835\uDE65\uD835\uDE61\uD835\uDE56\uD835\uDE6E\uD835\uDE5A\uD835\uDE67 \uD835\uDE69\uD835\uDE5D\uD835\uDE56\uD835\uDE69 \uD835\uDE67\uD835\uDE5A\uD835\uDE62\uD835\uDE64\uD835\uDE6B\uD835\uDE5A\uD835\uDE68 \uD835\uDE69\uD835\uDE5D\uD835\uDE5A \uD835\uDE5C\uD835\uDE64\uD835\uDE61\uD835\uDE59 \uD835\uDE58\uD835\uDE64\uD835\uDE5E\uD835\uDE63 \uD835\uDE6C\uD835\uDE5E\uD835\uDE63\uD835\uDE68!")
 
-    var board = setupBoard()
+
+
+    println("PLAYER 1! What's your name?")
+    val player1 = readln()
+    println("Player 2, what's your name?")
+    val player2 = readln()
+
+
+    val board = setupBoard()
     showBoard(board)
 
     println()
@@ -100,7 +115,7 @@ fun main() { //Main Game
      */
 
     while (true) {
-        playerTurn()
+        playerTurn(player1 , player2)
         if (board[0] != EMPTY) {
             println("Would you like to remove a coin or move a coin?")
             println("[R] to remove a coin")
@@ -117,6 +132,7 @@ fun main() { //Main Game
             }
 
         if (winCheck(board) == false) {
+            println()
             println("Congratulations! You win!")
             break
         }
@@ -154,12 +170,14 @@ fun showBoard(squareList: MutableList<String>) {
     println()
     for (i in squareList.indices) {
         print("┴────────")
+    }
+    
 
 
-}}
+    }
 
 //Adds the coins to the board
-fun addCoins(squareList: MutableList<String>): MutableList<String> { //This function adds coins onto the board
+fun addCoins(squareList: MutableList<String>): MutableList<String> { //This function adds coins onto the board, a random number from 3-7
     //println("I'm using add coins") Testing to check if it was using the function
 
     for (i in 0..SILVERCOINS) { //for each coin on the board
@@ -198,14 +216,14 @@ fun addCoins(squareList: MutableList<String>): MutableList<String> { //This func
 //Place the coins on the grid (at random spots)
 // show the grid with the coins
 
-fun playerTurn() {
+fun playerTurn(player1: String, player2: String) {
     playerTurnCount++
     if (playerTurnCount % 2 == 0) {
         println()
-        println("Player 1's turn!")
+        println("$player1's turn!")
         return
     }
-    else println("Player 2's turn!")
+    else println("$player2's turn!")
     return
 
 
@@ -225,25 +243,15 @@ fun coinMove(board: MutableList<String>) { //The function to move coins
      */
     println("Which coin would you like to move?")
 
-    var movedCoin = 0
+    var movedCoin: Int?
     var coinType = "blank"
 
     while (true) {
-        movedCoin = readln().toInt()
+        movedCoin = readln().toIntOrNull()
         if (movedCoin == null) {
-            println("Please type a coin!!")
+            println("Please ENTER A NUMBER!")
             continue
         }
-        if (movedCoin <= 0 || movedCoin >= NUMSQUARES) { //If they pick a square thats too big or small.
-        println("Please pick a coin to move!")
-        continue
-        }
-
-        if (board[movedCoin - 2] != EMPTY) {
-            println("There's nowhere to move this coin!")
-            continue
-        }
-
         when (board[movedCoin - 1]) {
             EMPTY -> {
                 println("Please choose a coin!")
@@ -258,13 +266,25 @@ fun coinMove(board: MutableList<String>) { //The function to move coins
                 coinType = "GOLD"
             }
         }
+
+        if (movedCoin <= 0 || movedCoin >= NUMSQUARES) { //If they pick a square thats too big or small.
+        println("Please pick a coin to move!")
+        continue
+        }
+
+        if ((board[movedCoin - 2] != EMPTY) || movedCoin-2 >= NUMSQUARES) {
+                println("There's nowhere to move this coin!")
+                continue
+            }
+
+
         break }
 
     println("Where would you like to move your coin to?")
     while (true) {
 
         val moveSquare = readln().toInt()
-        validMove(board, moveSquare, movedCoin)
+        validMove(board, moveSquare, movedCoin!!)
         if (validMove(board, moveSquare, movedCoin) == false) {
             println("You can't jump coins!")
             println(board)
@@ -315,13 +335,14 @@ fun validMove(board: MutableList<String> , moveSquare: Int , movedCoin: Int): Bo
 fun coinRemove(board: MutableList<String>) {
     board.removeAt(0)
     println("You removed a coin!")
+    showBoard(board)
 }
 
 fun winCheck(board: MutableList<String>): Boolean {
     if (board.contains("GOLD")) {
-        return false
+        return true
     }
-    return true
+    return false
 
 }
 
