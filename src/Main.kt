@@ -99,9 +99,8 @@ fun main() { //Main Game
      *
      */
 
-
+    while (true) {
         playerTurn()
-        board[0] = "silver"
         if (board[0] != EMPTY) {
             println("Would you like to remove a coin or move a coin?")
             println("[R] to remove a coin")
@@ -110,22 +109,18 @@ fun main() { //Main Game
             when (playerMove) {
                 null -> println("PLease insert either M or R")
                 'M'.toString() -> coinMove(board)
-                //'R'.toString() -> coinRemove()
+                'R'.toString() -> coinRemove(board)
 
+            }}
+        else {
+            coinMove(board)
             }
 
-
-//            else {
-//                coinMove()
-//            }
-//
-//            break
+        if (winCheck(board) == false) {
+            println("Congratulations! You win!")
+            break
         }
-        else {
-            println("yep it's empty")
-        }
-
-}
+}}
 //setup game :
 
 //Grab the silver coins (5)
@@ -235,8 +230,19 @@ fun coinMove(board: MutableList<String>) { //The function to move coins
 
     while (true) {
         movedCoin = readln().toInt()
+        if (movedCoin == null) {
+            println("Please type a coin!!")
+            continue
+        }
         if (movedCoin <= 0 || movedCoin >= NUMSQUARES) { //If they pick a square thats too big or small.
-        println("Please pick a coin to move!") }
+        println("Please pick a coin to move!")
+        continue
+        }
+
+        if (board[movedCoin - 2] != EMPTY) {
+            println("There's nowhere to move this coin!")
+            continue
+        }
 
         when (board[movedCoin - 1]) {
             EMPTY -> {
@@ -254,21 +260,34 @@ fun coinMove(board: MutableList<String>) { //The function to move coins
         }
         break }
 
-
+    println("Where would you like to move your coin to?")
     while (true) {
 
-        val moveSquare = moveSquare(board).toInt()
-
-        board[movedCoin-1]= EMPTY
-        validMove(board, moveSquare-1, movedCoin-1)
-        if (validMove(board, moveSquare-1, movedCoin-1) == false) {
+        val moveSquare = readln().toInt()
+        validMove(board, moveSquare, movedCoin)
+        if (validMove(board, moveSquare, movedCoin) == false) {
             println("You can't jump coins!")
+            println(board)
             continue
         }
 
 
-        board.add(moveSquare-1, coinType)
+        if (board[moveSquare-1] != EMPTY) {
+            println("There is already a coin in this square!!")
+            continue
+        }
+
+        if (moveSquare <= 0 || moveSquare >= NUMSQUARES) { //If they pick a square thats too big or small.
+            println("Please pick a square to move!")
+            continue
+        }
+
+        board.set(movedCoin-1 , EMPTY )
+
+
+        board.set(moveSquare-1 ,  coinType)
         showBoard(board)
+        println()
         println("Sucessfully moved coin!!")
 
         break
@@ -280,9 +299,10 @@ fun coinMove(board: MutableList<String>) { //The function to move coins
     }
 
 fun validMove(board: MutableList<String> , moveSquare: Int , movedCoin: Int): Boolean {
-    for (square in moveSquare..movedCoin) {
+    for (square in moveSquare+1..movedCoin-1) {
 
         if (board[square-1] != EMPTY) {
+
             return false
         }
 
@@ -292,24 +312,18 @@ fun validMove(board: MutableList<String> , moveSquare: Int , movedCoin: Int): Bo
     return true
 }
 
-fun moveSquare(board: MutableList<String>): Int {
-    println("Where would you like to move your coin to?")
-
-    val moveSquare = readln().toInt()
-
-
-    if (board[moveSquare-1] != EMPTY) {
-        println("There is already a coin in this square!!")
-        println(board)
-    }
-
-    if (moveSquare <= 0 || moveSquare >= NUMSQUARES) { //If they pick a square thats too big or small.
-        println("Please pick a square to move!")}
-
-    return moveSquare
-
+fun coinRemove(board: MutableList<String>) {
+    board.removeAt(0)
+    println("You removed a coin!")
 }
 
+fun winCheck(board: MutableList<String>): Boolean {
+    if (board.contains("GOLD")) {
+        return false
+    }
+    return true
+
+}
 
 
 
