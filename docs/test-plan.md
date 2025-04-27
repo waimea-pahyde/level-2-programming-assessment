@@ -12,14 +12,14 @@ Terminology:
 
 ## The coins get added to the board
 
-20 Silver coins and 1 gold coin should get added to the board.
+A random number of silver coins and 1 gold coin should get added to the board.
 
 ### Test Data To Use
 
 I will run the game multiple times to check if the coins get added.
 ### Expected Test Result
 
-All 21 coins get added to the board. No coins overlap. 
+The coins get added to the board. 
 
 ---
 
@@ -37,6 +37,8 @@ I will run the program twice, and when it asks to pick a coin, enter 21 and -1
 The program will say 'please pick a coin to move'
 
 ---
+
+
 ## Invalid testing, if a player picks a square with a coin that isn't there
 
 If the user picks a square that is empty and doesn't have a coin for the coin they want to move prompt.
