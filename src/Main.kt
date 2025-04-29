@@ -43,11 +43,18 @@ fun main() {
     println("\uD835\uDE4B\uD835\uDE61\uD835\uDE56\uD835\uDE6E\uD835\uDE5A\uD835\uDE67\uD835\uDE68 \uD835\uDE64\uD835\uDE63\uD835\uDE5A \uD835\uDE56\uD835\uDE63\uD835\uDE59 \uD835\uDE69\uD835\uDE6C\uD835\uDE64 \uD835\uDE69\uD835\uDE56\uD835\uDE60\uD835\uDE5A \uD835\uDE69\uD835\uDE6A\uD835\uDE67\uD835\uDE63\uD835\uDE68 \uD835\uDE69\uD835\uDE64 \uD835\uDE5A\uD835\uDE5E\uD835\uDE69\uD835\uDE5D\uD835\uDE5A\uD835\uDE67 \uD835\uDE62\uD835\uDE64\uD835\uDE6B\uD835\uDE5A \uD835\uDE64\uD835\uDE67 \uD835\uDE67\uD835\uDE5A\uD835\uDE62\uD835\uDE64\uD835\uDE6B\uD835\uDE5A \uD835\uDE58\uD835\uDE64\uD835\uDE5E\uD835\uDE63\uD835\uDE68 \uD835\uDE5B\uD835\uDE67\uD835\uDE64\uD835\uDE62 \uD835\uDE69\uD835\uDE5D\uD835\uDE5A \uD835\uDE57\uD835\uDE64\uD835\uDE56\uD835\uDE67\uD835\uDE59! \uD835\uDE4F\uD835\uDE5D\uD835\uDE5A \uD835\uDE65\uD835\uDE61\uD835\uDE56\uD835\uDE6E\uD835\uDE5A\uD835\uDE67 \uD835\uDE69\uD835\uDE5D\uD835\uDE56\uD835\uDE69 \uD835\uDE67\uD835\uDE5A\uD835\uDE62\uD835\uDE64\uD835\uDE6B\uD835\uDE5A\uD835\uDE68 \uD835\uDE69\uD835\uDE5D\uD835\uDE5A \uD835\uDE5C\uD835\uDE64\uD835\uDE61\uD835\uDE59 \uD835\uDE58\uD835\uDE64\uD835\uDE5E\uD835\uDE63 \uD835\uDE6C\uD835\uDE5E\uD835\uDE63\uD835\uDE68!")
 
 
-    //Getting player names
+    //Getting player names. If it's blank, assign the default.
     println("PLAYER 1! What's your name?")
-    val player1 = readln()
+    var player1 = readln()
+    if (player1.isBlank()) {
+        player1 = "Player 1"}
+
     println("Player 2, what's your name?")
-    val player2 = readln()
+    var player2 = readln()
+    if (player2.isBlank()) {
+        player2 = "Player 2"
+    }
+
 
     //Calls function to set up the board
     val board = setupBoard()
@@ -349,7 +356,7 @@ fun validMove(board: MutableList<String> , moveSquare: Int , movedCoin: Int): Bo
  * prints a line, then shows the board.
  */
 fun coinRemove(board: MutableList<String>) {
-    board[0] == EMPTY
+    board[0] = EMPTY
     println("You removed a coin!")
     showBoard(board)
 }
@@ -367,3 +374,4 @@ fun winCheck(board: MutableList<String>): Boolean {
     return false
 
 }
+

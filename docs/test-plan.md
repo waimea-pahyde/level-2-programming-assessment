@@ -119,31 +119,31 @@ The program prompts the correct user to take a turn .
 
 ---
 
-## Example Test Name
+## valid - Players can enter numbers as their name.
 
-Example test description. Example test description. Example test description. Example test description. Example test description. Example test description.
+If the user inputs a number or a space as their name, the program accepts it as the name they want, and doesn't crash.
 
 ### Test Data To Use
 
-Details of test data and reasons for selection. Details of test data and reasons for selection. Details of test data and reasons for selection.
+I will run the program multiple times, Inputting values such as '2934' and ' ' as my name when prompted. 
 
 ### Expected Test Result
 
-Statement detailing what should happen. Statement detailing what should happen. Statement detailing what should happen. Statement detailing what should happen.
+The program treats this as if this is the player name and does not crash. 
 
 ---
 
-## Example Test Name
 
-Example test description. Example test description. Example test description. Example test description. Example test description. Example test description.
+## Valid - long names
+
+PLayer inputs a really, really, long player name. 
 
 ### Test Data To Use
 
-Details of test data and reasons for selection. Details of test data and reasons for selection. Details of test data and reasons for selection.
-
+I will input two really long player names 
 ### Expected Test Result
 
-Statement detailing what should happen. Statement detailing what should happen. Statement detailing what should happen. Statement detailing what should happen.
+The program will accept the player name, in case the player just has a really long name. 
 
 ---## Example Test Name
 

@@ -35,11 +35,10 @@ I then changed the terminology so it's more correct.
 
 ---
 
-## Date: xx/xx/20xx
+## Date: 29/04/25
 
-Example description and notes. Example description and notes. Example description and notes. Example description and notes. Example description and notes. Example description and notes.
+Found a bug where when removing a coin, it would remove the square that the coin was in. I fixed this by replacing the 'board.removeAt[0]' to 'board0 = EMPTY' 
 
-![example.png](screenshots/example.png)
 
 ---
 

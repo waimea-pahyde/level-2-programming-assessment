@@ -120,39 +120,42 @@ I will run the program, and play the game, drawing it out as long as possible , 
 
 ### Test Result
 
-![example.png](screenshots/example.png)
+![The players take turns](screenshots/ValidPlayerNames.gif)
 
-Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result.
+Each player is asked to take a turn, one after each other. 
 
 ---
-## Example Test Name
 
-Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.
+
+## Invalid - Players can enter numbers as their name.
+
+If the user inputs a number or a space as their name, the program accepts it as the name they want, and doesn't crash.
 
 ### Test Data Used
 
-Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data.
+I ran the program, and put different things such as numbers or empty characters as my player name. 
 
 ### Test Result
 
-![example.png](screenshots/example.png)
+![Numbers as the player name, as well as a few spaces.](screenshots/NonCharPLayerNames.gif)
 
-Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result.
+The program treated the spaces and number as if they were names. I originally had a condition that didn't let you have spaces, but decided that players may not want to have their names for privacy reasons. 
 
 ---
-## Example Test Name
 
-Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.
+## Valid - long names
+
+PLayer inputs a really, really, long player name.
 
 ### Test Data Used
 
-Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data.
-
+I ran the program and put in a really long player name.
+ 
 ### Test Result
 
-![example.png](screenshots/example.png)
+![Long PLayer Names](screenshots/LongPLayerNames.gif)
 
-Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result.
+My program can comfortably cope with very long player names. 
 
 ---
 ## Example Test Name
