@@ -276,7 +276,7 @@ fun coinMove(board: MutableList<String>) { //The function to move coins
         val moveSquare = readln().toIntOrNull()
 
        if (moveSquare == null) {
-           println("Please choose a coin!")
+           println("Please choose a square!")
            continue
         }
 
@@ -349,7 +349,7 @@ fun validMove(board: MutableList<String> , moveSquare: Int , movedCoin: Int): Bo
  * prints a line, then shows the board.
  */
 fun coinRemove(board: MutableList<String>) {
-    board.removeAt(0)
+    board[0] == EMPTY
     println("You removed a coin!")
     showBoard(board)
 }

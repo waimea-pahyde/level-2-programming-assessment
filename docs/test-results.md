@@ -56,66 +56,67 @@ Testing to check that, when the user is prompted to pick a coin, if they choose 
 I ran the program, and picked squares without coins. 
 ### Test Result
 
+When I ran the program, it returned 'please choose a coin!' instead of crashing, and then loops to get another number. I then entered a valid input, and it asked where I wanted to move it. 
 
-
-![example.png](screenshots/example.png)
+![ trying to move a coin which has never existed](screenshots/MoveCoinToNoSquare.gif)
 
 
 
 ---
-## Example Test Name
+## Invalid testing if the user wants to move their coin to a full square
 
-Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.
+If when prompted, the user opts to move their coin to a square that already has a coin in it
+### Test Data Used
+
+I ran the program multiple times, each time selecting to move my coin to a square that already has a coin in it.
+### Test Result
+
+![moving the coin to a full square](screenshots/MoveCoinToFullSquare.gif)
+When I attempted to move my coin, which was at six, The program returned "there is already a coin in this square!" Instead of crashing.
+
+---
+
+
+## Invalid - if the user puts something random in for their prompt
+
+If, when prompted to move a coin or select a coin to move, the user puts letter, or some other invalid character type it.
 
 ### Test Data Used
 
-Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data.
+When prompted to select a coin to move, I put a random string of letters instead of an int. Then, when prompted again on where tp move my coin to, I put another random string of characters.
+### Test Result
+
+![incorrect](screenshots/MoveCoinToLetterDV.gif)
+![correct](screenshots/MoveCoinToLetter.gif)
+
+
+When I first tried this, it did work as intended, but instead said 'please choose a coin' instead of 'please choose a square'. After I fixed this, the program worked fine. 
+
+---
+
+
+## Valid Testing for Coin Moves
+
+I'm testing to see if, when prompted, if the user selects to move a valid coin, to a valid place, the coin moves.
+
+### Test Data Used
+
+I ran the program, and when prompted, I selected a valid coin to move, and a valid coin-moving square. 
 
 ### Test Result
 
-![example.png](screenshots/example.png)
+![Valid Moving A Coin](screenshots/ValidMoveCoin.gif)
 
-Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result.
-
----
-## Example Test Name
-
-Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.
-
-### Test Data Used
-
-Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data.
-
-### Test Result
-
-![example.png](screenshots/example.png)
-
-Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result.
+When I selected a valid square, and a valid coin, the program moved it.
 
 ---
-## Example Test Name
 
-Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.
+## Valid Testing player moves
 
+Testing to make sure that until the game ends, it correctly shows who's turn it is. 
 ### Test Data Used
 
-Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data.
-
-### Test Result
-
-![example.png](screenshots/example.png)
-
-Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result.
-
----
-v
-## Example Test Name
-
-Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.
-
-### Test Data Used
-
-Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data.
+I will run the program, and play the game, drawing it out as long as possible , as to make sure the game always gets it right.
 
 ### Test Result
 

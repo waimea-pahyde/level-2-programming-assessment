@@ -24,11 +24,14 @@ If the user selected they wanted to move the coin at an index that was out of bo
 
 ---
 
-## Date: xx/xx/20xx
+## Date: 29/04/25
 
-Example description and notes. Example description and notes. Example description and notes. Example description and notes. Example description and notes. Example description and notes.
+If, when prompted, the user put a random string of characters into it, the program returned 'please choose a coin!' instead of 'please choose a square!' I fixed this soon after. 
+![Incorrect Text](screenshots/MoveCoinToLetterDV.gif)
 
-![example.png](screenshots/example.png)
+I then changed the terminology so it's more correct. 
+
+![Correct Text](screenshots/MoveCoinToLetter.gif)
 
 ---
 

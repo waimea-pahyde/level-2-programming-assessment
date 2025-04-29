@@ -59,10 +59,10 @@ If when prompted, the user chooses to move their coin to a square that doesn't e
 
 ### Test Data To Use
 
-I will run the program multiple times, and when prompted, enter in 21 and 4 as the sqaure I want to move my coins to. 
+I will run the program multiple times, and when prompted, enter in 21 and -4 as the sqaure I want to move my coins to. 
 ### Expected Test Result
 
-The program will return 'That square does not exist'
+The program will return an error messgae. 
 
 ---
 ## Invalid - If the3 user wants to move their coin to a square with a coin in it
@@ -79,6 +79,8 @@ Statement detailing what should happen. Statement detailing what should happen. 
 
 ---
 
+
+
 ## Invalid - if the user puts something random in for their prompt
 
 If, when prompted to move a coin or select a coin to move, the user puts letter, or some other invalid character type it. 
@@ -91,6 +93,7 @@ The program will prompt the user to put a numhber in and loop
 
 ---
 
+
 ## Valid - Coin moves
 
 When the user selects the corredct place to move the coins and the correct coin the coin moves to the place selected by the user.
@@ -102,6 +105,7 @@ I will run the program, and input the valid test data into it.
 The program will place the coin in the correct placement.
 
 ---
+
 
 ## Valid - PLayers can take turns. 
 
