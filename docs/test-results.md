@@ -158,21 +158,22 @@ I ran the program and put in a really long player name.
 My program can comfortably cope with very long player names. 
 
 ---
-## Example Test Name
 
-Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.
+## Invalid - if the user tries to move their coin backwards
+
+If, when prompted the user tries to move their coin backwards, the program should inform them they can't do that.
 
 ### Test Data Used
 
-Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data.
-
+I ran the program and, when prompted, tried tom ove my coin backwards on the board
 ### Test Result
 
 ![example.png](screenshots/example.png)
 
-Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result.
+The program informed the user that they couldn't move their coin backwards. 
 
 ---
+
 ## Example Test Name
 
 Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.

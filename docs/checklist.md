@@ -41,13 +41,13 @@ The program code:
 ### Program Testing
 
 The program has been tested and there is documented evidence that:
-- [ ] The game is **fully functional**, showing testing of:
-  - [ ] game setup
-  - [ ] player moves
-  - [ ] players taking turns
+- [x] The game is **fully functional**, showing testing of:
+  - [x] game setup
+  - [x] player moves
+  - [x] players taking turns
   - [ ] scoring (if any)
-  - [ ] players winning
-  - [ ] final feedback (if appropriate)
+  - [x] players winning
+  - [x] final feedback (if appropriate)
 - [ ] **Valid (expected) data** has been used to test **all data inputs**
 - [ ] Where tests have failed, **fixes** are discussed and **tests re-run**
 
@@ -61,8 +61,8 @@ The program stores data using variables, where:
 - [x] Variable **names are well-chosen** (relating to their purpose)
 - [x] Variable names **begin with lowercase**
 - [x] Naming is consistent, either **camelCase or snake_case**
-- [ ] Variables are **scoped appropriately** (global or local to a function)
-- [ ] **Global** variables are only used if **genuinely needed**
+- [x] Variables are **scoped appropriately** (global or local to a function)
+- [x] **Global** variables are only used if **genuinely needed**
 
 The program uses functions appropriately, where:
 - [x] At least one uses **parameters** to pass data into it
@@ -76,14 +76,14 @@ The program code is well-commented:
 - [x] Comments accurately describe the **function and behaviour** of the code:
   - [x] Defining the **purpose** of functions / key blocks of code
   - [x] Explaining the **reason** (the '**why**') of key parts of the code
-  - [ ] Defining function **parameters** and/or **return values**
+  - [x] Defining function **parameters** and/or **return values**
 
 ### Program Testing
 
 The program has been tested using:
-- [ ] A test plan **prepared in advance** of the coding
-- [ ] A test plan that **defines test data values** to be used
-- [ ] Test values that cover **boundary** (limit / edge) cases
+- [x] A test plan **prepared in advance** of the coding
+- [x] A test plan that **defines test data values** to be used
+- [x] Test values that cover **boundary** (limit / edge) cases
 
 ---
 
@@ -93,11 +93,11 @@ The program has been tested using:
 
 Program flexibility and maintainability is aided by:
 - [x] **Constants** being used to define key values, and used throughout the program
-- [ ] Variable values being **derived at run-time** (from other variables / constants)
-- [ ] Literal values only being used if they **make sense**, and they don't impact program flexibility
+- [x] Variable values being **derived at run-time** (from other variables / constants)
+- [x] Literal values only being used if they **make sense**, and they don't impact program flexibility
 
 Program flexibility and maintainability is aided by good program structure:
-- [ ] Conditions, branching, loops and functions are used **effectively**
+- [x] Conditions, branching, loops and functions are used **effectively**
 - [ ] Procedures are **efficient** (minimal iterations, etc.)
 - [ ] **Minimal duplication of code** (instead using loops, or having multiple calls to a single function)
 - [ ] Functions are **well-chosen and logical**, with a clearly defined purpose

@@ -145,18 +145,6 @@ I will input two really long player names
 
 The program will accept the player name, in case the player just has a really long name. 
 
----## Example Test Name
-
-Example test description. Example test description. Example test description. Example test description. Example test description. Example test description.
-
-### Test Data To Use
-
-Details of test data and reasons for selection. Details of test data and reasons for selection. Details of test data and reasons for selection.
-
-### Expected Test Result
-
-Statement detailing what should happen. Statement detailing what should happen. Statement detailing what should happen. Statement detailing what should happen.
-
 ---
 
 ## Example Test Name
@@ -171,7 +159,23 @@ Details of test data and reasons for selection. Details of test data and reasons
 
 Statement detailing what should happen. Statement detailing what should happen. Statement detailing what should happen. Statement detailing what should happen.
 
----## Example Test Name
+---
+
+## Invalid - If coins get moved backwards
+
+If when prompted, the user opts to move their coin backwards. 
+
+### Test Data To Use
+
+When prompted to pick a square to move my ocin into, I will select a square which is behind my coin.
+
+### Expected Test Result
+
+The program will inform the user that they can't move their coin backwards. 
+
+---
+
+## Example Test Name
 
 Example test description. Example test description. Example test description. Example test description. Example test description. Example test description.
 

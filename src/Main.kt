@@ -43,6 +43,10 @@ fun main() {
     println("\uD835\uDE4B\uD835\uDE61\uD835\uDE56\uD835\uDE6E\uD835\uDE5A\uD835\uDE67\uD835\uDE68 \uD835\uDE64\uD835\uDE63\uD835\uDE5A \uD835\uDE56\uD835\uDE63\uD835\uDE59 \uD835\uDE69\uD835\uDE6C\uD835\uDE64 \uD835\uDE69\uD835\uDE56\uD835\uDE60\uD835\uDE5A \uD835\uDE69\uD835\uDE6A\uD835\uDE67\uD835\uDE63\uD835\uDE68 \uD835\uDE69\uD835\uDE64 \uD835\uDE5A\uD835\uDE5E\uD835\uDE69\uD835\uDE5D\uD835\uDE5A\uD835\uDE67 \uD835\uDE62\uD835\uDE64\uD835\uDE6B\uD835\uDE5A \uD835\uDE64\uD835\uDE67 \uD835\uDE67\uD835\uDE5A\uD835\uDE62\uD835\uDE64\uD835\uDE6B\uD835\uDE5A \uD835\uDE58\uD835\uDE64\uD835\uDE5E\uD835\uDE63\uD835\uDE68 \uD835\uDE5B\uD835\uDE67\uD835\uDE64\uD835\uDE62 \uD835\uDE69\uD835\uDE5D\uD835\uDE5A \uD835\uDE57\uD835\uDE64\uD835\uDE56\uD835\uDE67\uD835\uDE59! \uD835\uDE4F\uD835\uDE5D\uD835\uDE5A \uD835\uDE65\uD835\uDE61\uD835\uDE56\uD835\uDE6E\uD835\uDE5A\uD835\uDE67 \uD835\uDE69\uD835\uDE5D\uD835\uDE56\uD835\uDE69 \uD835\uDE67\uD835\uDE5A\uD835\uDE62\uD835\uDE64\uD835\uDE6B\uD835\uDE5A\uD835\uDE68 \uD835\uDE69\uD835\uDE5D\uD835\uDE5A \uD835\uDE5C\uD835\uDE64\uD835\uDE61\uD835\uDE59 \uD835\uDE58\uD835\uDE64\uD835\uDE5E\uD835\uDE63 \uD835\uDE6C\uD835\uDE5E\uD835\uDE63\uD835\uDE68!")
 
 
+
+    //sets the player turn count to 1
+    var playerTurnCount = 1
+
     //Getting player names. If it's blank, assign the default.
     println("PLAYER 1! What's your name?")
     var player1 = readln()
@@ -56,6 +60,10 @@ fun main() {
     }
 
 
+    var currentPlayer = ""
+    currentPlayer = playerTurn(player1, player2, playerTurnCount)
+
+
     //Calls function to set up the board
     val board = setupBoard()
     showBoard(board)
@@ -66,8 +74,8 @@ fun main() {
     val withCoin = addCoins(board)
     showBoard(withCoin)
 
-    //sets the player turn count to 1
-    var playerTurnCount = 1
+    var moveCount = 0
+
 
 
     /**
@@ -91,12 +99,8 @@ fun main() {
             println("[M] to move a coin")
             val playerMove = readln().uppercase()
             when (playerMove) {
-                null -> println("PLease insert either M or R")
-
                 'M'.toString() -> coinMove(board)
-
                 'R'.toString() -> coinRemove(board)
-
             }
         }
 
@@ -104,9 +108,12 @@ fun main() {
             coinMove(board)
             }
 
+        moveCount++
+
         if (!winCheck(board)) {
             println()
-            println("Congratulations! You win!")
+            println("Congratulations! $currentPlayer wins!")
+            println("You took ${moveCount} turns!")
             break
         }
 
@@ -193,17 +200,15 @@ fun addCoins(squareList: MutableList<String>): MutableList<String> {
  *
  *
  */
-fun playerTurn(player1: String, player2: String, playerTurnCount: Int) {
-
-    if (playerTurnCount % 2 == 0) {
-        println()
+fun playerTurn(player1: String, player2: String, playerTurnCount: Int): String {
+    println()
+    return if (playerTurnCount % 2 == 0) {
         println("$player1's turn!")
-        return
-    } else {
-        println()
+        player1 }
+    else {
         println("$player2's turn!")
+        player2
     }
-    return
 }
 
 /**
@@ -241,7 +246,7 @@ fun coinMove(board: MutableList<String>) { //The function to move coins
             println("Please ENTER A NUMBER!")
             continue
         }
-        if (movedCoin <= 0 || movedCoin >= NUMSQUARES) {
+        if (movedCoin <= 0 || movedCoin > NUMSQUARES) {
             println("Please pick a coin to move!")
             continue
         }
@@ -266,7 +271,7 @@ fun coinMove(board: MutableList<String>) { //The function to move coins
 
 
         //If there's a coin directly next to this one to the left, ergo nowhere to move it.
-        if ((board[movedCoin - 2] != EMPTY) || movedCoin-2 >= NUMSQUARES) {
+        if (movedCoin - 2 < 0 || board[movedCoin - 2] != EMPTY) {
                 println("There's nowhere to move this coin!")
                 continue
             }
