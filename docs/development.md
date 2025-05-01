@@ -42,12 +42,5 @@ Found a bug where when removing a coin, it would remove the square that the coin
 
 ---
 
-## Date: xx/xx/20xx
-
-Example description and notes. Example description and notes. Example description and notes. Example description and notes. Example description and notes. Example description and notes.
-
-![example.png](screenshots/example.png)
-
----
 
 

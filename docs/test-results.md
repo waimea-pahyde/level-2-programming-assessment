@@ -168,40 +168,11 @@ If, when prompted the user tries to move their coin backwards, the program shoul
 I ran the program and, when prompted, tried tom ove my coin backwards on the board
 ### Test Result
 
-![example.png](screenshots/example.png)
+![Moving the coin backwards](screenshots/BackwardsCoins.gif)
 
 The program informed the user that they couldn't move their coin backwards. 
 
 ---
 
-## Example Test Name
 
-Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.
-
-### Test Data Used
-
-Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data.
-
-### Test Result
-
-![example.png](screenshots/example.png)
-
-Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result.
-
----
-## Example Test Name
-
-Example test description. Example test description.Example test description. Example test description.Example test description. Example test description.
-
-### Test Data Used
-
-Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data. Details of test data.
-
-### Test Result
-
-![example.png](screenshots/example.png)
-
-Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result. Comment on test result.
-
----
 
