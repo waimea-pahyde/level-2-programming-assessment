@@ -174,5 +174,24 @@ The program informed the user that they couldn't move their coin backwards.
 
 ---
 
+## Valid - testing to see if players can win
+
+If either user removes the gold coin from the board, the game says the respective player wins
+
+### Test Data Used
+
+I ran the program and tested if each player can win. w
+### Test Result
+
+![Players winning](screenshots/playerswinnning.gif)
+
+
+The program informed each user when they won that they won. 
+
+---
+
+
+
+
 
 

@@ -91,7 +91,7 @@ fun main() {
 
     while (true) {
         playerTurnCount++
-        playerTurn(player1 , player2, playerTurnCount)
+        currentPlayer = playerTurn(player1 , player2, playerTurnCount)
 
         if (board[0] != EMPTY) {
             println("Would you like to remove a coin or move a coin?")
